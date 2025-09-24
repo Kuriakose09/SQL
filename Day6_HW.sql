@@ -1,13 +1,11 @@
-INSERT INTO books (title,author,gener,price,copies_sold) VALUES ('The Silent Patient', 'Alex Michaelides', 'Thriller', 399.00, 1200),( 'Atomic Habits', 'James Clear', 'Self-help', 499.00, 2000),( 'The Psychology of Money', 'Morgan Housel', 'Finance', 350.00, 1800);
+INSERT INTO movies (title,genre,release_year,rating,box_office) VALUES ('Inception', 'Sci-Fi', 2010, 8.8, 825),( 'The Dark Knight', 'Action', 2008, 9.0, 1004),('Interstellar', 'Sci-Fi', 2014, 8.6, 677),('Joker', 'Drama', 2019, 8.4, 1074),('Dunkirk', 'War', 2017, 7.9, 527);
 
-INSERT INTO bestsellers (id,title,author,gener,price,copies_sold) VALUES (4, 'Ikigai', 'Francesc Miralles', 'Philosophy', 300.00, 2500),(5, 'Think Like a Monk', 'Jay Shetty', 'Self-help', 450.00, 2200);
+SELECT  title,box_office as Earnings FROM movies;
 
-SELECT title,author FROM books UNION SELECT title,author FROM bestsellers;
+SELECT  title as Movie_Title,genre as Category FROM movies;
 
-SELECT * FROM books WHERE price>400;
+SELECT title,genre,release_year,rating AS IMDb_Score,box_office FROM movies WHERE genre IN ('Sci-Fi','Action');
 
-SELECT AVG(price) FROM books;
+SELECT title,genre,release_year as Releas,rating,box_office FROM movies WHERE release_year between 2008 and 2015;
 
-SELECT COUNT(*) FROM books;
-
-SELECT title AS  Book_Title,author AS Written_By FROM books;
+SELECT COUNT(*) AS High_Rated_Movies FROM movies WHERE rating>8.5;
