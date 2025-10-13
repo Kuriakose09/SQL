@@ -1,7 +1,7 @@
 CREATE TABLE employee (id int PRIMARY key AUTO_INCREMENT,name varchar(40),department varchar(40),`leave` int);
 CREATE TABLE exam (id int PRIMARY key AUTO_INCREMENT,employee_id int,`exam_status` varchar(40),FOREIGN KEY (employee_id) REFERENCES employee(id));
 
-INSERT INTO employee (id, name, department, `leave`) VALUES
+INSERT INTO employee (`id`, `name`, `department`, `leave`) VALUES
 (1, 'raju', 'sales', 1),
 (2, 'sangeetha', 'sales', 3),
 (3, 'vinay', 'operations', 8),
@@ -13,7 +13,7 @@ INSERT INTO employee (id, name, department, `leave`) VALUES
 (9, 'fathima', 'sales', 11),
 (10, 'varghese', 'operations', 14);
 
-INSERT INTO exam (id,employee_id,exam_status) VALUES
+INSERT INTO exam (`id`,`employee_id`,`exam_status`) VALUES
 (1,2,'pass'),
 (2,5,'fail'),
 (3,1,'fail'),
